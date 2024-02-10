@@ -28,10 +28,26 @@ namespace Uppgift_8
         static string Koda(Dictionary<char, char> map, string msg)
         {
             string[] message = msg.Split("");
-            for (int i = 0; i < map.Count; i++)
+            char[] messageC = new char[message.Length];
+            char[] resultat = new char[message.Length];
+
+            for (int i = 0; i < message.Length; i++)
             {
-                
+                messageC[i] = messageC[i];
             }
+            
+            for (int i = 0; i < messageC.Length; i++)
+            {
+                foreach (char c in map.Keys)
+                {
+                    if (c == messageC[i]) 
+                    {
+                        resultat[i] = map[c];
+                    }
+                }
+            }
+
+            return resultat.ToString();
         }
     }
 }
